@@ -1,20 +1,25 @@
-# Python Security Toolkit
+# Python Security & Network Toolkit
 
-A lightweight Python security and network toolkit built for defensive security testing and learning.
+A Python command-line toolkit for practicing defensive security, network
+programming, HTTP inspection, and input validation.
+
+Built as a hands-on cybersecurity learning project using Python, Linux,
+Termux, and Git.
 
 ## Features
 
-- Validate IPv4/IPv6 addresses and hostnames
-- Check TCP connectivity to specific ports
-- Inspect HTTP response headers
-- Display HTTP status codes
-- Built with Python standard-library modules
-- Designed for authorized testing and local security labs
+- IP address and hostname validation
+- TCP port connectivity checking
+- HTTP response inspection
+- HTTP status detection
+- HTTP response header inspection
+- Security-header auditing
+- Command-line interface
+- Linux and Termux support
 
-## Installation
+## Commands
 
-Clone the repository:
+### Show help
 
 ```bash
-git clone https://github.com/dctricks/python-security-toolkit.git
-cd python-security-toolkit
+python toolkit.py --help
