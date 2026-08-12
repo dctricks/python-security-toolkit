@@ -54,6 +54,28 @@ def check_headers(url, timeout=5):
         return None, {"error": str(exc)}
 
 
+def analyze_security_headers(headers):
+    """Check for commonly recommended HTTP security headers."""
+
+    recommended_headers = [
+        "Content-Security-Policy",
+        "X-Content-Type-Options",
+        "X-Frame-Options",
+        "Referrer-Policy",
+        "Strict-Transport-Security",
+    ]
+
+    print()
+    print("Security Headers")
+    print("----------------")
+
+    for header in recommended_headers:
+        if header in headers:
+            print(f"[+] {header}: PRESENT")
+        else:
+            print(f"[-] {header}: MISSING")
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Python Security & Network Toolkit"
@@ -118,6 +140,7 @@ def main():
         for name, value in headers.items():
             print(f"    {name}: {value}")
 
+        analyze_security_headers(headers)
 
 if __name__ == "__main__":
     main()
